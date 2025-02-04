@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Employee jack = new Employee("Jack", "Vorobei", "Petrovich", "Engineer", "jack@mail.ru", 123456789, 35000, 25);
-        Employee anna = new Employee("Anna", "Ivanova", "Sergeevna", "Manager", "anna@mail.ru", 987654321, 40000, 30);
-        Employee sergey = new Employee("Sergey", "Petrov", "Igorevich", "Developer", "sergey@mail.ru", 456789123, 45000, 28);
-        Employee olga = new Employee("Olga", "Sidorova", "Alexeevna", "Designer", "olga@mail.ru", 654321987, 38000, 26);
-        Employee mikhail = new Employee("Mikhail", "Kuznetsov", "Nikolaevich", "Tester", "mikhail@mail.ru", 321654987, 37000, 27);
+        Employee jack = new Employee("Jack", "Vorobei", "Petrovich", "Engineer", "jack@mail.ru", "123456789", 35000, 25);
+        Employee anna = new Employee("Anna", "Ivanova", "Sergeevna", "Manager", "anna@mail.ru", "987654321", 40000, 30);
+        Employee sergey = new Employee("Sergey", "Petrov", "Igorevich", "Developer", "sergey@mail.ru", "456789123", 45000, 28);
+        Employee olga = new Employee("Olga", "Sidorova", "Alexeevna", "Designer", "olga@mail.ru", "654321987", 38000, 26);
+        Employee mikhail = new Employee("Mikhail", "Kuznetsov", "Nikolaevich", "Tester", "mikhail@mail.ru", "321654987", 37000, 27);
 
         var persList = new ArrayList<Employee>();
         persList.add(jack);
@@ -21,9 +21,16 @@ public class Main {
         }
         System.out.println();
 
-        Park park = new Park("Суворова", "Колокольчик", "9:00 - 18:00", 200);
+        Park park = new Park("Суворова");
+
+        Park.Attraction attraction1 = park.new Attraction("Ракушки", "9:00 - 18:00", 150);
+
+        park.addAttraction(attraction1);
+        park.addAttraction("Колокольчик", "9:00 - 18:00", 200);
+        park.addAttraction("Колесо обозрения", "9:00 - 18:00", 300);
 
         System.out.println(park);
+
 
     }
 }

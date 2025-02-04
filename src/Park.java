@@ -1,22 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Park {
 
     private String name;
-    private Attraction attraction;
+    private List<Attraction> attractions;
 
-    public Park(String name, String nameAttraction, String openingHours, int cost) {
+    public Park(String name) {
         this.name = name;
-        attraction = new Attraction(nameAttraction, openingHours, cost);
+        attractions = new ArrayList<>();
+
+    }
+
+    public void addAttraction(String name, String openingHours, int cost) {
+        Attraction newAttraction = new Attraction(name, openingHours, cost);
+        attractions.add(newAttraction);
+    }
+
+    public void addAttraction(Attraction attraction) {
+        Attraction newAttraction = attraction;
+        attractions.add(newAttraction);
     }
 
     @Override
     public String toString() {
-        return "Park {" +
-                "namePark='" + name + '\'' +
-                ", attraction=" + attraction +
+        return "Park{" +
+                "name='" + name + '\'' +
+                ", \nattraction=" + attractions +
                 '}';
     }
 
-    private class Attraction {
+    public class Attraction {
 
         private String name;
         private String openingHours;
@@ -34,7 +48,7 @@ public class Park {
                     "name='" + name + '\'' +
                     ", openingHours='" + openingHours + '\'' +
                     ", cost=" + cost +
-                    '}';
+                    '}' ;
         }
     }
 }
