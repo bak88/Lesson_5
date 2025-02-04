@@ -18,8 +18,7 @@ public class Park {
     }
 
     public void addAttraction(Attraction attraction) {
-        Attraction newAttraction = attraction;
-        attractions.add(newAttraction);
+        attractions.add(attraction);
     }
 
     @Override
